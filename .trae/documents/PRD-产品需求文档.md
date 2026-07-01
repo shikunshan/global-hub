@@ -69,7 +69,7 @@ flowchart LR
 - **字体**：使用现代无衬线字体，确保清晰易读
 - **布局风格**：卡片式网格布局，留白充足，呼吸感强
 - **图标风格**：简洁线条图标或网站 Logo，统一视觉语言
-- **网站 Logo 规范**：**必须使用各网站对应的真实 Logo，禁止使用 emoji 或随意编造的图标占位。** 通过 Google Favicon API 动态获取各网站的高清 favicon（`https://www.google.com/s2/favicons?sz=64&domain=域名`），加载失败时自动 fallback 到 DuckDuckGo 图标服务（`https://icons.duckduckgo.com/ip3/域名.ico`），确保每个卡片展示的都是该网站真实的品牌标识
+- **网站 Logo 规范**：**必须使用各网站对应的真实 Logo，禁止使用 emoji 或随意编造的图标占位。** 采用三级 fallback 策略：①优先使用本地缓存文件 `assets/icons/{id}.png`（通过 `scripts/fetch-icons.mjs` 脚本预下载，零网络请求加载最快）→ ②Google Favicon API（`https://www.google.com/s2/favicons?sz=64&domain=域名`）→ ③DuckDuckGo 图标服务（`https://icons.duckduckgo.com/ip3/域名.ico`），确保每个卡片展示的都是该网站真实的品牌标识，同时通过本地缓存最大化加载速度
 - **整体调性**：极客、现代、精致、参考 Stripe / Linear 的设计美学
 
 ### 4.2 页面设计概览

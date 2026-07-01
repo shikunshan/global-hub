@@ -440,24 +440,26 @@ function getHostname(url) {
   }
 }
 
-// 生成网站真实 logo 的 URL
-// 优先使用 Google Favicon API（高分辨率），失败时 fallback 到 DuckDuckGo
-function getLogoUrl(site) {
+// 生成 Google Favicon API URL（高分辨率）
+function getGoogleLogoUrl(site) {
   const hostname = getHostname(site.url);
   return `https://www.google.com/s2/favicons?sz=64&domain=${hostname}`;
 }
 
-// 生成 logo 的 fallback URL（DuckDuckGo 图标服务）
-function getLogoFallbackUrl(site) {
+// 生成 DuckDuckGo 图标服务 URL
+function getDuckDuckGoLogoUrl(site) {
   const hostname = getHostname(site.url);
   return `https://icons.duckduckgo.com/ip3/${hostname}.ico`;
 }
 
-// 生成 logo 的 HTML（带 onerror fallback）
+// 生成 logo 的 HTML（三级 fallback：本地缓存 → Google API → DuckDuckGo API）
+// 优先使用已下载到项目本地的 favicon 文件，避免每次请求外部 API，提升加载速度
 function renderLogo(site, sizeClass = 'w-6 h-6') {
-  const primary = getLogoUrl(site);
-  const fallback = getLogoFallbackUrl(site);
-  return `<img src="${primary}" alt="${site.name}" loading="lazy" class="${sizeClass} rounded object-contain" onerror="this.onerror=null;this.src='${fallback}'" />`;
+  const local = `assets/icons/${site.id}.png`;
+  const google = getGoogleLogoUrl(site);
+  const ddg = getDuckDuckGoLogoUrl(site);
+  // 链式 onerror：本地文件加载失败 → Google API → DuckDuckGo API
+  return `<img src="${local}" alt="${site.name}" loading="lazy" class="${sizeClass} rounded object-contain" onerror="this.onerror=null;this.src='${google}';this.onerror=function(){this.onerror=null;this.src='${ddg}'}" />`;
 }
 
 // --- Utilities ---

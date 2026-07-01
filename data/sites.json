@@ -1,0 +1,446 @@
+{
+  "categories": [
+    {
+      "id": "ai-frontier",
+      "name": {
+        "en": "AI Frontier",
+        "zh": "AI 前沿"
+      },
+      "featured": true,
+      "subcategories": [
+        {
+          "id": "research",
+          "name": {
+            "en": "Research",
+            "zh": "学术研究"
+          }
+        },
+        {
+          "id": "industry",
+          "name": {
+            "en": "Industry",
+            "zh": "产业动态"
+          }
+        },
+        {
+          "id": "community",
+          "name": {
+            "en": "Community",
+            "zh": "社区讨论"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tech-dev",
+      "name": {
+        "en": "Tech & Dev",
+        "zh": "技术与开发"
+      },
+      "featured": false,
+      "subcategories": []
+    },
+    {
+      "id": "knowledge-learning",
+      "name": {
+        "en": "Knowledge & Learning",
+        "zh": "知识与学习"
+      },
+      "featured": false,
+      "subcategories": []
+    },
+    {
+      "id": "media-news",
+      "name": {
+        "en": "Media & News",
+        "zh": "媒体与新闻"
+      },
+      "featured": false,
+      "subcategories": []
+    },
+    {
+      "id": "tools-productivity",
+      "name": {
+        "en": "Tools & Productivity",
+        "zh": "工具与效率"
+      },
+      "featured": false,
+      "subcategories": []
+    },
+    {
+      "id": "china-access",
+      "name": {
+        "en": "China Access",
+        "zh": "中文精选"
+      },
+      "featured": false,
+      "subcategories": []
+    }
+  ],
+  "sites": [
+    {
+      "id": "arxiv",
+      "name": "arXiv",
+      "url": "https://arxiv.org",
+      "desc": {
+        "en": "Open access to 2M+ scholarly papers. The birthplace of modern AI research.",
+        "zh": "超过 200 万篇学术论文的开放获取平台，现代 AI 研究的发源地。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "research",
+      "isNew": false,
+      "lastUpdated": "2024-01-10"
+    },
+    {
+      "id": "papers-with-code",
+      "name": "Papers with Code",
+      "url": "https://paperswithcode.com",
+      "desc": {
+        "en": "ML papers linked with code. Track SOTA across every benchmark.",
+        "zh": "机器学习论文 + 代码合集，追踪各领域最先进的 SOTA 结果。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "research",
+      "isNew": false,
+      "lastUpdated": "2024-01-12"
+    },
+    {
+      "id": "huggingface-papers",
+      "name": "Hugging Face Papers",
+      "url": "https://huggingface.co/papers",
+      "desc": {
+        "en": "Daily trending AI papers with community summaries and model links.",
+        "zh": "每日热门 AI 论文，附带社区摘要和相关模型链接。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "research",
+      "isNew": true,
+      "lastUpdated": "2024-01-20"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "url": "https://openai.com",
+      "desc": {
+        "en": "The creator of GPT and ChatGPT. Defining the frontier of AGI research.",
+        "zh": "GPT 和 ChatGPT 的缔造者，定义 AGI 研究前沿的公司。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "industry",
+      "isNew": false,
+      "lastUpdated": "2024-01-08"
+    },
+    {
+      "id": "deepmind",
+      "name": "DeepMind",
+      "url": "https://deepmind.google",
+      "desc": {
+        "en": "Google's AI lab. AlphaFold, AlphaGo, and Gemini breakthroughs.",
+        "zh": "谷歌旗下 AI 实验室，AlphaFold、AlphaGo、Gemini 的缔造者。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "industry",
+      "isNew": false,
+      "lastUpdated": "2024-01-15"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "url": "https://www.anthropic.com",
+      "desc": {
+        "en": "Maker of Claude. Building reliable, interpretable, and steerable AI systems.",
+        "zh": "Claude 的创造者，致力于构建可靠、可解释、可控的 AI 系统。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "industry",
+      "isNew": true,
+      "lastUpdated": "2024-01-22"
+    },
+    {
+      "id": "hacker-news",
+      "name": "Hacker News",
+      "url": "https://news.ycombinator.com",
+      "desc": {
+        "en": "The pulse of tech and startup culture. Where smart people discuss what matters.",
+        "zh": "科技与创业文化的脉搏，聪明人讨论重要事情的地方。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "community",
+      "isNew": false,
+      "lastUpdated": "2024-01-05"
+    },
+    {
+      "id": "lesswrong",
+      "name": "LessWrong",
+      "url": "https://www.lesswrong.com",
+      "desc": {
+        "en": "Community focused on AI alignment and rational thinking.",
+        "zh": "聚焦 AI 对齐与理性思考的深度社区。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "community",
+      "isNew": false,
+      "lastUpdated": "2024-01-18"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "url": "https://github.com",
+      "desc": {
+        "en": "The world's largest code host. Where software is built together.",
+        "zh": "全球最大的代码托管平台，软件协作开发的基础设施。"
+      },
+      "category": "tech-dev",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-10"
+    },
+    {
+      "id": "stackoverflow",
+      "name": "Stack Overflow",
+      "url": "https://stackoverflow.com",
+      "desc": {
+        "en": "The largest Q&A community for programmers. Every answer you'll ever need.",
+        "zh": "全球最大的程序员问答社区，你遇到的每个 Bug 在这里都有答案。"
+      },
+      "category": "tech-dev",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-08"
+    },
+    {
+      "id": "huggingface",
+      "name": "Hugging Face",
+      "url": "https://huggingface.co",
+      "desc": {
+        "en": "The AI community building the future. Models, datasets, and spaces.",
+        "zh": "AI 开发者的社区家园，模型、数据集和应用空间一站式获取。"
+      },
+      "category": "tech-dev",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-15"
+    },
+    {
+      "id": "producthunt",
+      "name": "Product Hunt",
+      "url": "https://www.producthunt.com",
+      "desc": {
+        "en": "Discover the next big thing in tech. Daily new products and launches.",
+        "zh": "发现下一个科技爆款，每日新品发布与社区投票。"
+      },
+      "category": "tech-dev",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-12"
+    },
+    {
+      "id": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://www.wikipedia.org",
+      "desc": {
+        "en": "The free encyclopedia. 60M+ articles, sum of all human knowledge.",
+        "zh": "自由的百科全书，6000 万篇文章，人类知识的总和。"
+      },
+      "category": "knowledge-learning",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-05"
+    },
+    {
+      "id": "khan-academy",
+      "name": "Khan Academy",
+      "url": "https://www.khanacademy.org",
+      "desc": {
+        "en": "Free world-class education for anyone, anywhere. K-12 to college level.",
+        "zh": "面向所有人的免费世界级教育，从小学到大学全覆盖。"
+      },
+      "category": "knowledge-learning",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-10"
+    },
+    {
+      "id": "coursera",
+      "name": "Coursera",
+      "url": "https://www.coursera.org",
+      "desc": {
+        "en": "Learn from top universities and companies. 7000+ courses with certificates.",
+        "zh": "来自顶尖大学和企业的在线课程，7000+ 课程带认证证书。"
+      },
+      "category": "knowledge-learning",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-08"
+    },
+    {
+      "id": "distill-pub",
+      "name": "Distill.pub",
+      "url": "https://distill.pub",
+      "desc": {
+        "en": "Interactive machine learning articles. Visual explanations that stick.",
+        "zh": "交互式机器学习文章，用可视化方式让抽象概念变得清晰。"
+      },
+      "category": "knowledge-learning",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-15"
+    },
+    {
+      "id": "reuters",
+      "name": "Reuters",
+      "url": "https://www.reuters.com",
+      "desc": {
+        "en": "Trusted global news. Independent reporting from 200+ locations worldwide.",
+        "zh": "值得信赖的全球新闻，来自全球 200 多个站点的独立报道。"
+      },
+      "category": "media-news",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-18"
+    },
+    {
+      "id": "ap-news",
+      "name": "Associated Press",
+      "url": "https://apnews.com",
+      "desc": {
+        "en": "The world's oldest and largest news agency. Fast, accurate, unbiased.",
+        "zh": "全球历史最悠久、规模最大的通讯社，快速、准确、客观。"
+      },
+      "category": "media-news",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-20"
+    },
+    {
+      "id": "financial-times",
+      "name": "Financial Times",
+      "url": "https://www.ft.com",
+      "desc": {
+        "en": "Essential global business news. The authority on markets and economics.",
+        "zh": "不可或缺的全球商业新闻，市场与经济领域的权威之声。"
+      },
+      "category": "media-news",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-12"
+    },
+    {
+      "id": "bloomberg",
+      "name": "Bloomberg",
+      "url": "https://www.bloomberg.com",
+      "desc": {
+        "en": "Business and markets news. Data-driven journalism for decision makers.",
+        "zh": "商业与市场新闻，为决策者提供数据驱动的新闻报道。"
+      },
+      "category": "media-news",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-15"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "url": "https://www.notion.so",
+      "desc": {
+        "en": "All-in-one workspace. Docs, databases, wikis, and project management.",
+        "zh": "一体化工作空间，文档、数据库、wiki 和项目管理尽在其中。"
+      },
+      "category": "tools-productivity",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-08"
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "url": "https://obsidian.md",
+      "desc": {
+        "en": "Local-first markdown notes. Build your second brain with linked thinking.",
+        "zh": "本地优先的 Markdown 笔记，用双向链接构建你的第二大脑。"
+      },
+      "category": "tools-productivity",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-10"
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "url": "https://www.figma.com",
+      "desc": {
+        "en": "Collaborative interface design. Design, prototype, and ship together.",
+        "zh": "协作式界面设计工具，设计、原型、交付一站式完成。"
+      },
+      "category": "tools-productivity",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-12"
+    },
+    {
+      "id": "tldrlegal",
+      "name": "TLDRLegal",
+      "url": "https://tldrlegal.com",
+      "desc": {
+        "en": "Software licenses explained in plain English. No legal jargon.",
+        "zh": "用大白话解释软件许可证，不用再读天书般的法律条款。"
+      },
+      "category": "tools-productivity",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-18"
+    },
+    {
+      "id": "qbitai",
+      "name": "量子位",
+      "url": "https://www.qbitai.com",
+      "desc": {
+        "en": "China's leading AI media. Tracking Chinese tech and AI developments.",
+        "zh": "中国领先的 AI 科技媒体，追踪国内科技与 AI 前沿动态。"
+      },
+      "category": "china-access",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-15"
+    },
+    {
+      "id": "36kr",
+      "name": "36氪",
+      "url": "https://36kr.com",
+      "desc": {
+        "en": "China's tech and startup media. Where China's innovation ecosystem meets.",
+        "zh": "中国科技创业媒体，连接中国创新生态的核心平台。"
+      },
+      "category": "china-access",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-10"
+    },
+    {
+      "id": "zhihu",
+      "name": "知乎",
+      "url": "https://www.zhihu.com",
+      "desc": {
+        "en": "China's Quora-like Q&A platform. Expert answers on every topic.",
+        "zh": "中国的问答社区，各领域专业人士分享见解的平台。"
+      },
+      "category": "china-access",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-08"
+    },
+    {
+      "id": "sspai",
+      "name": "少数派",
+      "url": "https://sspai.com",
+      "desc": {
+        "en": "Quality digital life content. App reviews, productivity tips, tutorials.",
+        "zh": "高品质数字生活内容，应用测评、效率技巧、教程指南。"
+      },
+      "category": "china-access",
+      "subcategory": null,
+      "isNew": false,
+      "lastUpdated": "2024-01-12"
+    }
+  ]
+}

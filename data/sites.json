@@ -154,6 +154,45 @@
       "lastUpdated": "2024-07-01"
     },
     {
+      "id": "semantic-scholar",
+      "name": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org",
+      "desc": {
+        "en": "AI-powered academic search with 200M+ papers and citation graphs.",
+        "zh": "AI 驱动的学术搜索引擎，2 亿+ 论文与引用图谱。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "research",
+      "isNew": true,
+      "lastUpdated": "2024-07-01"
+    },
+    {
+      "id": "openreview",
+      "name": "OpenReview",
+      "url": "https://openreview.net",
+      "desc": {
+        "en": "Open peer review platform for top conferences like ICLR, NeurIPS, ICML.",
+        "zh": "ICLR、NeurIPS、ICML 等顶会的开放评审平台，透明学术讨论。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "research",
+      "isNew": true,
+      "lastUpdated": "2024-07-01"
+    },
+    {
+      "id": "nature-ai",
+      "name": "Nature Machine Intelligence",
+      "url": "https://www.nature.com/natmachintell",
+      "desc": {
+        "en": "Nature's flagship journal for AI and machine learning research.",
+        "zh": "Nature 旗下人工智能与机器学习研究的旗舰期刊。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "research",
+      "isNew": false,
+      "lastUpdated": "2024-07-01"
+    },
+    {
       "id": "openai",
       "name": "OpenAI",
       "url": "https://openai.com",
@@ -281,6 +320,58 @@
       "category": "ai-frontier",
       "subcategory": "community",
       "isNew": false,
+      "lastUpdated": "2024-07-01"
+    },
+    {
+      "id": "reddit-ml",
+      "name": "r/MachineLearning",
+      "url": "https://www.reddit.com/r/MachineLearning",
+      "desc": {
+        "en": "Largest ML community on Reddit. Papers, projects, and discussions.",
+        "zh": "Reddit 上最大的机器学习社区，论文、项目与讨论应有尽有。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "community",
+      "isNew": true,
+      "lastUpdated": "2024-07-01"
+    },
+    {
+      "id": "kaggle",
+      "name": "Kaggle",
+      "url": "https://www.kaggle.com",
+      "desc": {
+        "en": "The home of data science and machine learning competitions & datasets.",
+        "zh": "数据科学与机器学习竞赛的大本营，海量数据集与 Notebooks。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "community",
+      "isNew": false,
+      "lastUpdated": "2024-07-01"
+    },
+    {
+      "id": "towards-data-science",
+      "name": "Towards Data Science",
+      "url": "https://towardsdatascience.com",
+      "desc": {
+        "en": "Medium's largest data science publication. Tutorials and industry insights.",
+        "zh": "Medium 上最大的数据科学出版物，教程与行业洞察兼具。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "community",
+      "isNew": true,
+      "lastUpdated": "2024-07-01"
+    },
+    {
+      "id": "datasets-ml",
+      "name": "Papers With Code Datasets",
+      "url": "https://paperswithcode.com/datasets",
+      "desc": {
+        "en": "Curated ML datasets with benchmarks and leaderboards.",
+        "zh": "精选机器学习数据集，附带基准测试与排行榜。"
+      },
+      "category": "ai-frontier",
+      "subcategory": "community",
+      "isNew": true,
       "lastUpdated": "2024-07-01"
     },
     {

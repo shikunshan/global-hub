@@ -375,19 +375,30 @@ function setupSearch() {
   const input = document.getElementById('searchInput');
   if (!input) return;
 
+  // 解析 bang 语法，支持「!g 关键词」和「!g关键词」两种写法
+  function parseBang(value) {
+    if (!value.startsWith('!')) return null;
+    // 先尝试带空格的形式：!g keyword
+    const spaceParts = value.split(/\s+/);
+    const bangSpace = spaceParts[0].toLowerCase();
+    if (BANG_COMMANDS[bangSpace]) {
+      return { bang: bangSpace, query: spaceParts.slice(1).join(' ').trim() };
+    }
+    // 再尝试不带空格的形式：!gkeyword（从最长 bang 开始匹配）
+    const bangKeys = Object.keys(BANG_COMMANDS).sort((a, b) => b.length - a.length);
+    const lower = value.toLowerCase();
+    for (const bang of bangKeys) {
+      if (lower.startsWith(bang)) {
+        const query = value.slice(bang.length).trim();
+        return { bang, query };
+      }
+    }
+    return null;
+  }
+
   let debounceTimer;
   input.addEventListener('input', (e) => {
     const value = e.target.value.trim();
-
-    if (value.startsWith('!')) {
-      const parts = value.split(/\s+/);
-      const bang = parts[0].toLowerCase();
-      const query = parts.slice(1).join(' ');
-      if (BANG_COMMANDS[bang] && query.length > 0) {
-        // Will navigate on Enter key
-      }
-    }
-
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
       state.searchQuery = value;
@@ -398,13 +409,10 @@ function setupSearch() {
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       const value = e.target.value.trim();
-      if (value.startsWith('!')) {
-        const parts = value.split(/\s+/);
-        const bang = parts[0].toLowerCase();
-        const query = parts.slice(1).join(' ').trim();
-        if (BANG_COMMANDS[bang]) {
-          window.open(BANG_COMMANDS[bang] + encodeURIComponent(query || ''), '_blank');
-        }
+      const parsed = parseBang(value);
+      if (parsed) {
+        e.preventDefault();
+        window.open(BANG_COMMANDS[parsed.bang] + encodeURIComponent(parsed.query || ''), '_blank');
       }
     }
   });

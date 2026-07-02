@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    const basePath = window.location.pathname.startsWith('/global-hub/') ? '/global-hub/' : '/';
+    document.write('<base href="' + basePath + '" />');
+  </script>
   <title data-i18n="heroTitle">Global Hub - Connect to the World's Best Information</title>
   <meta name="description" data-i18n="metaDescription" content="Global Hub - Connect to the world's best information." />
   <meta name="theme-color" content="#ffffff" data-theme-color-light />

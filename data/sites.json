@@ -1,4 +1,7 @@
 {
+  "defaults": {
+    "lastUpdated": "2024-07-01"
+  },
   "categories": [
     {
       "id": "ai-frontier",
@@ -123,9 +126,7 @@
         "zh": "超过 200 万篇学术论文的开放获取平台，现代 AI 研究的发源地。"
       },
       "category": "ai-frontier",
-      "subcategory": "research",
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "subcategory": "research"
     },
     {
       "id": "papers-with-code",
@@ -136,9 +137,7 @@
         "zh": "机器学习论文 + 代码合集，追踪各领域最先进的 SOTA 结果。"
       },
       "category": "ai-frontier",
-      "subcategory": "research",
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "subcategory": "research"
     },
     {
       "id": "huggingface-papers",
@@ -149,9 +148,7 @@
         "zh": "每日热门 AI 论文，附带社区摘要和相关模型链接。"
       },
       "category": "ai-frontier",
-      "subcategory": "research",
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "subcategory": "research"
     },
     {
       "id": "semantic-scholar",
@@ -163,8 +160,7 @@
       },
       "category": "ai-frontier",
       "subcategory": "research",
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "openreview",
@@ -176,8 +172,7 @@
       },
       "category": "ai-frontier",
       "subcategory": "research",
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "nature-ai",
@@ -188,9 +183,7 @@
         "zh": "Nature 旗下人工智能与机器学习研究的旗舰期刊。"
       },
       "category": "ai-frontier",
-      "subcategory": "research",
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "subcategory": "research"
     },
     {
       "id": "openai",
@@ -201,9 +194,7 @@
         "zh": "GPT 和 ChatGPT 的缔造者，定义 AGI 研究前沿的公司。"
       },
       "category": "ai-frontier",
-      "subcategory": "industry",
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "subcategory": "industry"
     },
     {
       "id": "deepmind",
@@ -214,9 +205,7 @@
         "zh": "谷歌旗下 AI 实验室，AlphaFold、AlphaGo、Gemini 的缔造者。"
       },
       "category": "ai-frontier",
-      "subcategory": "industry",
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "subcategory": "industry"
     },
     {
       "id": "anthropic",
@@ -228,8 +217,7 @@
       },
       "category": "ai-frontier",
       "subcategory": "industry",
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "midjourney",
@@ -240,9 +228,7 @@
         "zh": "AI 图像生成领导者，用文字提示创造令人惊叹的艺术作品。"
       },
       "category": "ai-frontier",
-      "subcategory": "industry",
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "subcategory": "industry"
     },
     {
       "id": "stability-ai",
@@ -253,9 +239,7 @@
         "zh": "Stable Diffusion 背后的公司，开源 AI 图像生成技术。"
       },
       "category": "ai-frontier",
-      "subcategory": "industry",
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "subcategory": "industry"
     },
     {
       "id": "perplexity",
@@ -267,8 +251,7 @@
       },
       "category": "ai-frontier",
       "subcategory": "industry",
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "gemini",
@@ -279,9 +262,7 @@
         "zh": "Google 最强 AI 模型，大规模多模态推理能力。"
       },
       "category": "ai-frontier",
-      "subcategory": "industry",
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "subcategory": "industry"
     },
     {
       "id": "mistral",
@@ -293,8 +274,7 @@
       },
       "category": "ai-frontier",
       "subcategory": "industry",
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "hacker-news",
@@ -305,9 +285,7 @@
         "zh": "科技与创业文化的脉搏，聪明人讨论重要事情的地方。"
       },
       "category": "ai-frontier",
-      "subcategory": "community",
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "subcategory": "community"
     },
     {
       "id": "lesswrong",
@@ -318,9 +296,7 @@
         "zh": "聚焦 AI 对齐与理性思考的深度社区。"
       },
       "category": "ai-frontier",
-      "subcategory": "community",
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "subcategory": "community"
     },
     {
       "id": "reddit-ml",
@@ -332,8 +308,7 @@
       },
       "category": "ai-frontier",
       "subcategory": "community",
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "kaggle",
@@ -344,9 +319,7 @@
         "zh": "数据科学与机器学习竞赛的大本营，海量数据集与 Notebooks。"
       },
       "category": "ai-frontier",
-      "subcategory": "community",
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "subcategory": "community"
     },
     {
       "id": "towards-data-science",
@@ -358,8 +331,7 @@
       },
       "category": "ai-frontier",
       "subcategory": "community",
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "datasets-ml",
@@ -371,8 +343,7 @@
       },
       "category": "ai-frontier",
       "subcategory": "community",
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "github",
@@ -382,10 +353,7 @@
         "en": "The world's largest code host. Where software is built together.",
         "zh": "全球最大的代码托管平台，软件协作开发的基础设施。"
       },
-      "category": "tech-dev",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tech-dev"
     },
     {
       "id": "stackoverflow",
@@ -395,10 +363,7 @@
         "en": "The largest Q&A community for programmers. Every answer you'll ever need.",
         "zh": "全球最大的程序员问答社区，你遇到的每个 Bug 在这里都有答案。"
       },
-      "category": "tech-dev",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tech-dev"
     },
     {
       "id": "huggingface",
@@ -408,10 +373,7 @@
         "en": "The AI community building the future. Models, datasets, and spaces.",
         "zh": "AI 开发者的社区家园，模型、数据集和应用空间一站式获取。"
       },
-      "category": "tech-dev",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tech-dev"
     },
     {
       "id": "producthunt",
@@ -421,10 +383,7 @@
         "en": "Discover the next big thing in tech. Daily new products and launches.",
         "zh": "发现下一个科技爆款，每日新品发布与社区投票。"
       },
-      "category": "tech-dev",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tech-dev"
     },
     {
       "id": "mdn-web-docs",
@@ -434,10 +393,7 @@
         "en": "Authoritative documentation for web technologies. HTML, CSS, JavaScript reference.",
         "zh": "Web 技术权威文档，HTML、CSS、JavaScript 官方参考手册。"
       },
-      "category": "tech-dev",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tech-dev"
     },
     {
       "id": "devdocs",
@@ -447,10 +403,7 @@
         "en": "Combined API documentation for multiple languages. Fast offline search.",
         "zh": "聚合多门语言 API 文档，支持快速离线搜索的开发者手册。"
       },
-      "category": "tech-dev",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tech-dev"
     },
     {
       "id": "freecodecamp",
@@ -460,10 +413,7 @@
         "en": "Free coding education platform. Learn to code and build projects.",
         "zh": "免费编程学习平台，通过实战项目学习编程技能。"
       },
-      "category": "tech-dev",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tech-dev"
     },
     {
       "id": "leetcode",
@@ -473,10 +423,7 @@
         "en": "The world's leading algorithm practice platform. Prepare for tech interviews.",
         "zh": "全球领先的算法刷题平台，为技术面试做好充分准备。"
       },
-      "category": "tech-dev",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tech-dev"
     },
     {
       "id": "w3schools",
@@ -486,10 +433,7 @@
         "en": "Web development tutorials. Learn HTML, CSS, JavaScript and more.",
         "zh": "Web 前端教程网站，学习 HTML、CSS、JavaScript 等技术。"
       },
-      "category": "tech-dev",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tech-dev"
     },
     {
       "id": "tutorialspoint",
@@ -499,10 +443,7 @@
         "en": "Comprehensive programming tutorials. Covering 100+ technologies and languages.",
         "zh": "编程教程大全，涵盖 100 多种技术和编程语言。"
       },
-      "category": "tech-dev",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tech-dev"
     },
     {
       "id": "roadmap-sh",
@@ -513,9 +454,7 @@
         "zh": "开发者职业路线图，每个技术方向的分步学习指南。"
       },
       "category": "tech-dev",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "git-scm",
@@ -525,10 +464,7 @@
         "en": "Official Git documentation. Everything you need to know about Git.",
         "zh": "Git 官方文档，全面了解 Git 版本控制系统的权威资源。"
       },
-      "category": "tech-dev",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tech-dev"
     },
     {
       "id": "learnxinyminutes",
@@ -538,10 +474,7 @@
         "en": "Quickly browse language syntax. Learn the basics in minutes.",
         "zh": "快速浏览语言语法，几分钟内掌握一门语言的基础知识。"
       },
-      "category": "tech-dev",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tech-dev"
     },
     {
       "id": "the-odin-project",
@@ -552,9 +485,7 @@
         "zh": "免费全栈 Web 开发课程，通过构建真实项目进行学习。"
       },
       "category": "tech-dev",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "wikipedia",
@@ -564,10 +495,7 @@
         "en": "The free encyclopedia. 60M+ articles, sum of all human knowledge.",
         "zh": "自由的百科全书，6000 万篇文章，人类知识的总和。"
       },
-      "category": "knowledge-learning",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "knowledge-learning"
     },
     {
       "id": "khan-academy",
@@ -577,10 +505,7 @@
         "en": "Free world-class education for anyone, anywhere. K-12 to college level.",
         "zh": "面向所有人的免费世界级教育，从小学到大学全覆盖。"
       },
-      "category": "knowledge-learning",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "knowledge-learning"
     },
     {
       "id": "coursera",
@@ -590,10 +515,7 @@
         "en": "Learn from top universities and companies. 7000+ courses with certificates.",
         "zh": "来自顶尖大学和企业的在线课程，7000+ 课程带认证证书。"
       },
-      "category": "knowledge-learning",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "knowledge-learning"
     },
     {
       "id": "distill-pub",
@@ -603,10 +525,7 @@
         "en": "Interactive machine learning articles. Visual explanations that stick.",
         "zh": "交互式机器学习文章，用可视化方式让抽象概念变得清晰。"
       },
-      "category": "knowledge-learning",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "knowledge-learning"
     },
     {
       "id": "wikihow",
@@ -616,10 +535,7 @@
         "en": "How to do anything. Step-by-step instructions for every topic imaginable.",
         "zh": "万物指南，任何你想知道的事情都有分步图文教程。"
       },
-      "category": "knowledge-learning",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "knowledge-learning"
     },
     {
       "id": "edx",
@@ -629,10 +545,7 @@
         "en": "Nonprofit online courses from Harvard and MIT. High quality education for all.",
         "zh": "哈佛和 MIT 创立的非营利在线课程平台，高质量教育普惠大众。"
       },
-      "category": "knowledge-learning",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "knowledge-learning"
     },
     {
       "id": "mit-ocw",
@@ -642,10 +555,7 @@
         "en": "Free MIT courses. Lecture notes, exams, and videos from 2500+ courses.",
         "zh": "MIT 免费公开课，2500+ 门课程的讲义、考试和视频资料。"
       },
-      "category": "knowledge-learning",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "knowledge-learning"
     },
     {
       "id": "ted",
@@ -655,10 +565,7 @@
         "en": "Ideas worth spreading. Short powerful talks from the world's greatest minds.",
         "zh": "值得传播的思想，来自全球最伟大头脑的简短有力演讲。"
       },
-      "category": "knowledge-learning",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "knowledge-learning"
     },
     {
       "id": "learn-anything",
@@ -669,9 +576,7 @@
         "zh": "全领域技能树，用可视化方式规划你的学习路径。"
       },
       "category": "knowledge-learning",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "bookstack",
@@ -681,10 +586,7 @@
         "en": "Computer e-books and document sharing platform. Thousands of free tech books.",
         "zh": "计算机电子书/文档分享平台，数千本免费技术书籍。"
       },
-      "category": "knowledge-learning",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "knowledge-learning"
     },
     {
       "id": "pexels",
@@ -694,10 +596,7 @@
         "en": "High quality free stock photos and videos. No attribution required.",
         "zh": "高清无版权图片和视频素材，无需署名即可免费使用。"
       },
-      "category": "design-assets",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "design-assets"
     },
     {
       "id": "unsplash",
@@ -707,10 +606,7 @@
         "en": "Beautiful free high resolution photography. Photos for every project.",
         "zh": "高品质免费摄影图库，为每个项目提供精美高分辨率照片。"
       },
-      "category": "design-assets",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "design-assets"
     },
     {
       "id": "pixabay",
@@ -720,10 +616,7 @@
         "en": "Free illustrations, vectors, music, and photos. Over 4 million assets.",
         "zh": "免费插画、矢量图、音乐和照片，超过 400 万素材资源。"
       },
-      "category": "design-assets",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "design-assets"
     },
     {
       "id": "colorhunt",
@@ -733,10 +626,7 @@
         "en": "Daily color inspiration. Curated color palettes for designers.",
         "zh": "每日配色灵感，为设计师精心挑选的色彩搭配方案。"
       },
-      "category": "design-assets",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "design-assets"
     },
     {
       "id": "coolors",
@@ -746,10 +636,7 @@
         "en": "The super fast color scheme generator. Create palettes in seconds.",
         "zh": "配色方案生成器，几秒钟内创建完美的色彩搭配方案。"
       },
-      "category": "design-assets",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "design-assets"
     },
     {
       "id": "worldvectorlogo",
@@ -759,10 +646,7 @@
         "en": "Download brand vector logos. Thousands of logos in SVG format.",
         "zh": "品牌矢量 Logo 下载，数千个 SVG 格式的知名品牌标志。"
       },
-      "category": "design-assets",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "design-assets"
     },
     {
       "id": "pngdirs",
@@ -772,10 +656,7 @@
         "en": "Transparent background PNG images. Free download for design projects.",
         "zh": "透明背景 PNG 素材，为设计项目提供免费下载资源。"
       },
-      "category": "design-assets",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "design-assets"
     },
     {
       "id": "shuge",
@@ -786,9 +667,7 @@
         "zh": "古籍碑帖古画善本，数字化的中华传统文化遗产。"
       },
       "category": "design-assets",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "gallerix",
@@ -798,10 +677,7 @@
         "en": "High resolution famous paintings. Download artwork from great masters.",
         "zh": "名画高清下载，欣赏并下载艺术大师的经典作品。"
       },
-      "category": "design-assets",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "design-assets"
     },
     {
       "id": "reuters",
@@ -811,10 +687,7 @@
         "en": "Trusted global news. Independent reporting from 200+ locations worldwide.",
         "zh": "值得信赖的全球新闻，来自全球 200 多个站点的独立报道。"
       },
-      "category": "media-news",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "media-news"
     },
     {
       "id": "ap-news",
@@ -824,10 +697,7 @@
         "en": "The world's oldest and largest news agency. Fast, accurate, unbiased.",
         "zh": "全球历史最悠久、规模最大的通讯社，快速、准确、客观。"
       },
-      "category": "media-news",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "media-news"
     },
     {
       "id": "financial-times",
@@ -837,10 +707,7 @@
         "en": "Essential global business news. The authority on markets and economics.",
         "zh": "不可或缺的全球商业新闻，市场与经济领域的权威之声。"
       },
-      "category": "media-news",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "media-news"
     },
     {
       "id": "bloomberg",
@@ -850,10 +717,7 @@
         "en": "Business and markets news. Data-driven journalism for decision makers.",
         "zh": "商业与市场新闻，为决策者提供数据驱动的新闻报道。"
       },
-      "category": "media-news",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "media-news"
     },
     {
       "id": "the-economist",
@@ -863,10 +727,7 @@
         "en": "Global news and analysis. Insightful reporting on politics, business, and culture.",
         "zh": "经济学人，对政治、商业和文化的深度分析与评论。"
       },
-      "category": "media-news",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "media-news"
     },
     {
       "id": "the-guardian",
@@ -876,10 +737,7 @@
         "en": "Independent liberal news. Award winning journalism from the UK.",
         "zh": "卫报，来自英国的独立自由派新闻媒体，屡获新闻大奖。"
       },
-      "category": "media-news",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "media-news"
     },
     {
       "id": "bbc-news",
@@ -889,10 +747,7 @@
         "en": "UK public broadcaster. Comprehensive coverage of world and UK news.",
         "zh": "BBC 新闻，英国公共广播公司，全面报道世界和英国新闻。"
       },
-      "category": "media-news",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "media-news"
     },
     {
       "id": "techcrunch",
@@ -902,10 +757,7 @@
         "en": "Tech startup news and analysis. Breaking news on Silicon Valley and beyond.",
         "zh": "科技创业新闻，硅谷及全球创业生态的最新动态报道。"
       },
-      "category": "media-news",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "media-news"
     },
     {
       "id": "the-verge",
@@ -915,10 +767,7 @@
         "en": "Tech and culture media. How technology shapes science, art, and society.",
         "zh": "科技文化媒体，探讨科技如何塑造科学、艺术和社会。"
       },
-      "category": "media-news",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "media-news"
     },
     {
       "id": "wired",
@@ -928,10 +777,7 @@
         "en": "Where technology meets culture. Deep dives into emerging tech trends.",
         "zh": "连线杂志，科技与文化的交汇处，深度探讨新兴技术趋势。"
       },
-      "category": "media-news",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "media-news"
     },
     {
       "id": "notion",
@@ -941,10 +787,7 @@
         "en": "All-in-one workspace. Docs, databases, wikis, and project management.",
         "zh": "一体化工作空间，文档、数据库、wiki 和项目管理尽在其中。"
       },
-      "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tools-productivity"
     },
     {
       "id": "obsidian",
@@ -954,10 +797,7 @@
         "en": "Local-first markdown notes. Build your second brain with linked thinking.",
         "zh": "本地优先的 Markdown 笔记，用双向链接构建你的第二大脑。"
       },
-      "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tools-productivity"
     },
     {
       "id": "figma",
@@ -967,10 +807,7 @@
         "en": "Collaborative interface design. Design, prototype, and ship together.",
         "zh": "协作式界面设计工具，设计、原型、交付一站式完成。"
       },
-      "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tools-productivity"
     },
     {
       "id": "tldrlegal",
@@ -980,10 +817,7 @@
         "en": "Software licenses explained in plain English. No legal jargon.",
         "zh": "用大白话解释软件许可证，不用再读天书般的法律条款。"
       },
-      "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tools-productivity"
     },
     {
       "id": "toollu",
@@ -993,10 +827,7 @@
         "en": "Chinese online toolbox. Hundreds of practical web tools for developers.",
         "zh": "中文老牌百宝箱，为开发者提供数百个实用在线工具。"
       },
-      "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tools-productivity"
     },
     {
       "id": "pdf24",
@@ -1006,10 +837,7 @@
         "en": "All-in-one PDF solution. Merge, split, compress, convert and more.",
         "zh": "全能 PDF 处理工具，合并、分割、压缩、转换等功能应有尽有。"
       },
-      "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tools-productivity"
     },
     {
       "id": "ilovepdf",
@@ -1019,10 +847,7 @@
         "en": "Every PDF tool you need. The Swiss Army knife for PDF files.",
         "zh": "PDF 瑞士军刀，你需要的每一个 PDF 工具都在这里。"
       },
-      "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tools-productivity"
     },
     {
       "id": "tinywow",
@@ -1032,10 +857,7 @@
         "en": "Free file, video, and image conversion tools. No registration needed.",
         "zh": "免费文件、视频、图片转换工具，无需注册即可使用。"
       },
-      "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tools-productivity"
     },
     {
       "id": "remove-bg",
@@ -1046,9 +868,7 @@
         "zh": "AI 抠图去背景，一键去除图片背景，效果精准自然。"
       },
       "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "pearocr",
@@ -1058,10 +878,7 @@
         "en": "Online OCR text recognition. Free, no limits, and privacy focused.",
         "zh": "在线文字识别 OCR，免费无限制，注重隐私保护。"
       },
-      "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tools-productivity"
     },
     {
       "id": "zhimap",
@@ -1071,10 +888,7 @@
         "en": "Free online mind mapping tool. Organize ideas visually and creatively.",
         "zh": "免费在线思维导图，用视觉化和创意的方式组织想法。"
       },
-      "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tools-productivity"
     },
     {
       "id": "processon",
@@ -1084,10 +898,7 @@
         "en": "Mind maps and flowcharts. Collaborative diagramming platform for teams.",
         "zh": "思维导图流程图，团队协作式图表绘制平台。"
       },
-      "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tools-productivity"
     },
     {
       "id": "10minutemail",
@@ -1097,10 +908,7 @@
         "en": "Temporary disposable email address. Protect your privacy online.",
         "zh": "临时邮箱，保护你的在线隐私，避免垃圾邮件骚扰。"
       },
-      "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "tools-productivity"
     },
     {
       "id": "cheatography",
@@ -1111,9 +919,7 @@
         "zh": "速查表大全，为程序员和各类学习者提供快速参考卡片。"
       },
       "category": "tools-productivity",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "flightradar24",
@@ -1123,10 +929,7 @@
         "en": "Live flight tracker. Real-time aircraft tracking from around the world.",
         "zh": "实时全球航班追踪，在地图上查看全球飞机实时动态。"
       },
-      "category": "life-services",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "life-services"
     },
     {
       "id": "justwatch",
@@ -1136,10 +939,7 @@
         "en": "Streaming guide for movies and TV shows. Find where to watch legally.",
         "zh": "影视资源导航，查找电影和剧集在哪个平台可以观看。"
       },
-      "category": "life-services",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "life-services"
     },
     {
       "id": "sleep-calculator",
@@ -1149,10 +949,7 @@
         "en": "Calculate optimal sleep cycles. Wake up feeling refreshed and energized.",
         "zh": "科学睡眠周期计算，在正确的时间醒来让你精力充沛。"
       },
-      "category": "life-services",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "life-services"
     },
     {
       "id": "bigjpg",
@@ -1163,9 +960,7 @@
         "zh": "AI 无损放大图片，放大照片和动漫插画依然清晰自然。"
       },
       "category": "life-services",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "tunefind",
@@ -1175,10 +970,7 @@
         "en": "Find music from movies and TV shows. Discover soundtracks and BGM.",
         "zh": "影视插曲 BGM 查询，找到电影和电视剧中的所有音乐。"
       },
-      "category": "life-services",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "life-services"
     },
     {
       "id": "lazyplan",
@@ -1189,9 +981,7 @@
         "zh": "高铁 X 小时圈出游规划，周末说走就走的旅行灵感。"
       },
       "category": "life-services",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "carcarekiosk",
@@ -1201,10 +991,7 @@
         "en": "DIY car repair video tutorials. Fix your car with step-by-step guidance.",
         "zh": "修车 DIY 视频教程，跟着视频一步步自己动手修车。"
       },
-      "category": "life-services",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "life-services"
     },
     {
       "id": "tonzhon",
@@ -1214,10 +1001,7 @@
         "en": "Clean online music player. Listen to songs without ads or distractions.",
         "zh": "纯净在线听歌，无广告无打扰的简洁音乐播放器。"
       },
-      "category": "music-audio",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "music-audio"
     },
     {
       "id": "music-for-programming",
@@ -1228,9 +1012,7 @@
         "zh": "编程专注背景音，纯音乐曲目帮助你进入心流状态。"
       },
       "category": "music-audio",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "radio-garden",
@@ -1241,9 +1023,7 @@
         "zh": "全球实时电台，转动地球收听世界各地的广播电台。"
       },
       "category": "music-audio",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "asoftmurmur",
@@ -1253,10 +1033,7 @@
         "en": "Ambient white noise mixer. Create your perfect relaxing soundscape.",
         "zh": "环境白噪音混合器，创造属于你的完美放松声音环境。"
       },
-      "category": "music-audio",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "music-audio"
     },
     {
       "id": "radiooooo",
@@ -1267,9 +1044,7 @@
         "zh": "年代+国家音乐时光机，探索不同时代不同国家的音乐。"
       },
       "category": "music-audio",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "panda-live",
@@ -1279,10 +1054,7 @@
         "en": "Live panda camera from China. Watch adorable giant pandas 24/7.",
         "zh": "熊猫直播治愈，24 小时观看可爱的大熊猫日常。"
       },
-      "category": "music-audio",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "music-audio"
     },
     {
       "id": "soundcloud",
@@ -1292,10 +1064,7 @@
         "en": "Independent music platform. Discover emerging artists and new tracks.",
         "zh": "独立音乐人平台，发现新兴艺术家和原创音乐作品。"
       },
-      "category": "music-audio",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "music-audio"
     },
     {
       "id": "neal-fun",
@@ -1306,9 +1075,7 @@
         "zh": "趣味数据可视化项目集，互动有趣又能涨知识。"
       },
       "category": "info-exploration",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "deep-sea",
@@ -1318,10 +1085,7 @@
         "en": "Interactive deep sea exploration. Dive down and discover marine life.",
         "zh": "交互式深海探索，一路下潜发现奇妙的海洋生物。"
       },
-      "category": "info-exploration",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "info-exploration"
     },
     {
       "id": "the-useless-web",
@@ -1331,10 +1095,7 @@
         "en": "Random useless websites. Click to discover strange and wonderful corners.",
         "zh": "随机无用网站，点击发现互联网上奇怪又有趣的角落。"
       },
-      "category": "info-exploration",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "info-exploration"
     },
     {
       "id": "human-benchmark",
@@ -1344,10 +1105,7 @@
         "en": "Test your cognitive abilities. Reaction time, memory, typing and more.",
         "zh": "人类能力测试，测反应、记忆力、打字速度等各项能力。"
       },
-      "category": "info-exploration",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "info-exploration"
     },
     {
       "id": "cybermap-kaspersky",
@@ -1358,9 +1116,7 @@
         "zh": "全球网络攻击地图，实时观看世界各地的网络安全威胁。"
       },
       "category": "info-exploration",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "web-design-museum",
@@ -1370,10 +1126,7 @@
         "en": "Archive of classic website interfaces. See how web design evolved.",
         "zh": "经典网站界面存档，回顾网页设计的发展演变历程。"
       },
-      "category": "info-exploration",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "info-exploration"
     },
     {
       "id": "jojokanbao",
@@ -1383,10 +1136,7 @@
         "en": "Historical newspaper archive. Browse old newspapers from past eras.",
         "zh": "历史报纸查阅，浏览各个年代的老报纸和历史文献。"
       },
-      "category": "info-exploration",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "info-exploration"
     },
     {
       "id": "atimebook",
@@ -1396,10 +1146,7 @@
         "en": "Archive of century-old textbooks and magazines. Digital cultural memory.",
         "zh": "百年老课本杂志存档，数字化的历史文化记忆宝库。"
       },
-      "category": "info-exploration",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "info-exploration"
     },
     {
       "id": "qbitai",
@@ -1409,10 +1156,7 @@
         "en": "China's leading AI media. Tracking Chinese tech and AI developments.",
         "zh": "中国领先的 AI 科技媒体，追踪国内科技与 AI 前沿动态。"
       },
-      "category": "china-access",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "china-access"
     },
     {
       "id": "36kr",
@@ -1422,10 +1166,7 @@
         "en": "China's tech and startup media. Where China's innovation ecosystem meets.",
         "zh": "中国科技创业媒体，连接中国创新生态的核心平台。"
       },
-      "category": "china-access",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "china-access"
     },
     {
       "id": "zhihu",
@@ -1435,10 +1176,7 @@
         "en": "China's Quora-like Q&A platform. Expert answers on every topic.",
         "zh": "中国的问答社区，各领域专业人士分享见解的平台。"
       },
-      "category": "china-access",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "china-access"
     },
     {
       "id": "sspai",
@@ -1448,10 +1186,7 @@
         "en": "Quality digital life content. App reviews, productivity tips, tutorials.",
         "zh": "高品质数字生活内容，应用测评、效率技巧、教程指南。"
       },
-      "category": "china-access",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "china-access"
     },
     {
       "id": "liaoxuefeng",
@@ -1461,10 +1196,7 @@
         "en": "Quality Chinese programming tutorials. Python, Git, JavaScript and more.",
         "zh": "中文精品编程教程，Python、Git、JavaScript 等技术教程。"
       },
-      "category": "china-access",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "china-access"
     },
     {
       "id": "c-biancheng",
@@ -1474,10 +1206,7 @@
         "en": "Chinese C/C++ programming tutorials. Beginner friendly and in depth.",
         "zh": "C/C++ 中文教程，适合初学者的深入浅出编程教程。"
       },
-      "category": "china-access",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "china-access"
     },
     {
       "id": "icourse163",
@@ -1487,10 +1216,7 @@
         "en": "Chinese university MOOC platform. Courses from top Chinese universities.",
         "zh": "中国大学 MOOC，来自国内顶尖高校的优质在线课程。"
       },
-      "category": "china-access",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "china-access"
     },
     {
       "id": "xuetangx",
@@ -1500,10 +1226,7 @@
         "en": "Tsinghua University's online learning platform. Quality higher education.",
         "zh": "清华学堂在线，清华大学发起的精品在线教育平台。"
       },
-      "category": "china-access",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "china-access"
     },
     {
       "id": "rebang",
@@ -1514,9 +1237,7 @@
         "zh": "极简热榜聚合，一个干净的界面看遍全网热门榜单。"
       },
       "category": "china-access",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     },
     {
       "id": "ruanyifeng",
@@ -1526,10 +1247,7 @@
         "en": "Famous Chinese tech blog. Weekly internet newsletter and tech essays.",
         "zh": "阮一峰的网络日志，科技爱好者周刊和技术文章精选。"
       },
-      "category": "china-access",
-      "subcategory": null,
-      "isNew": false,
-      "lastUpdated": "2024-07-01"
+      "category": "china-access"
     },
     {
       "id": "cbaigui",
@@ -1540,9 +1258,7 @@
         "zh": "纪妖，妖怪百科，探索中国古代神话传说中的精怪世界。"
       },
       "category": "china-access",
-      "subcategory": null,
-      "isNew": true,
-      "lastUpdated": "2024-07-01"
+      "isNew": true
     }
   ]
 }

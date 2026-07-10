@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* Global Hub - Custom Styles                                          */
+/* ------------------------------------------------------------------ */
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth transitions for theme switching.
+   Scoped to the elements that actually change color on theme toggle
+   instead of the universal `*` selector, which caused paint churn and
+   animated unrelated property changes. */
+body,
+header,
+nav,
+footer,
+.site-card,
+.featured-subcategory,
+.cat-btn,
+button,
+input,
+kbd,
+a,
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+svg {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Regular site card — lift, glow, gradient sheen, CTA reveal          */
+/* ------------------------------------------------------------------ */
+.site-card {
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.site-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px -12px rgba(59, 130, 246, 0.28),
+    0 8px 16px -8px rgba(15, 23, 42, 0.15);
+}
+[data-theme="dark"] .site-card:hover {
+  box-shadow: 0 18px 44px -12px rgba(59, 130, 246, 0.38),
+    0 6px 14px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* Soft gradient border/glow that fades in on hover */
+.card-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.65),
+    rgba(139, 92, 246, 0.55) 55%,
+    rgba(34, 211, 238, 0.5)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.site-card:hover .card-glow {
+  opacity: 1;
+}
+
+/* Diagonal light sheen that sweeps across on hover */
+.card-sheen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transform: translateX(-160%) skewX(-18deg);
+  pointer-events: none;
+  opacity: 0;
+}
+[data-theme="dark"] .card-sheen {
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+}
+.site-card:hover .card-sheen {
+  opacity: 1;
+  animation: sheenSweep 0.9s ease-out;
+}
+@keyframes sheenSweep {
+  to {
+    transform: translateX(260%) skewX(-18deg);
+  }
+}
+
+/* Logo pops + gently tilts on hover */
+.card-logo {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease;
+}
+.group:hover .card-logo {
+  transform: scale(1.12) rotate(-3deg);
+  box-shadow: 0 6px 16px -6px rgba(59, 130, 246, 0.5);
+}
+
+/* "Visit ->" call-to-action: hidden until hover, then slides up */
+.card-cta {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+.group:hover .card-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card-cta-arrow {
+  transition: transform 0.28s ease;
+}
+.group:hover .card-cta-arrow {
+  animation: nudgeRight 0.9s ease-in-out infinite;
+}
+@keyframes nudgeRight {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+}
+
+/* Featured (AI Frontier) list card arrow */
+.featured-card-arrow {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+.featured-card:hover .featured-card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* New badge pulse */
+.new-badge {
+  animation: pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0);
+  }
+}
+
+/* Staggered card entrance */
+.card-stagger {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Category nav active indicator */
+.cat-btn {
+  position: relative;
+  white-space: nowrap;
+}
+.cat-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  border-radius: 2px;
+}
+
+/* Search focus glow */
+#searchInput:focus ~ .search-glow {
+  opacity: 1;
+}
+
+/* Gradient text selection */
+::selection {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #1e40af;
+}
+[data-theme="dark"] ::selection {
+  background-color: rgba(59, 130, 246, 0.3);
+  color: #bfdbfe;
+}
+
+/* Subtle grain/noise texture overlay for depth */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Featured section special border glow */
+.featured-subcategory {
+  position: relative;
+  overflow: hidden;
+}
+.featured-subcategory::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.5),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.featured-subcategory:hover::before {
+  opacity: 1;
+}

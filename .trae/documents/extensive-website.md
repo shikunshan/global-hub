@@ -159,7 +159,7 @@
 | **Deep Sea(尼尔深海)** | https://neal.fun/deep-sea | 交互式下潜从阳光带到马里亚纳海沟，每层真实生物标注，自然科学酷站。 |
 | **The Odin Project** | https://www.theodinproject.com | （虽偏知识但项目制全栈Web）免费开源无广，顺提一句实战派。 |
 | **Human Benchmark** | https://humanbenchmark.com | 反应速度/记忆力/听觉/打字测试，测测自己是不是“普通人类水平”。 |
-| **Cybermap(Kaspersky)** | httpshttps://cybermap.kaspersky.com | 实时全球网络攻击可视化地图，绿光脉冲极客风，看网络威胁分布。 |
+| **Cybermap(Kaspersky)** | https://cybermap.kaspersky.com | 实时全球网络攻击可视化地图，绿光脉冲极客风，看网络威胁分布。 |
 | **Species 2000 China** | http://www.sp2000.org.cn | 中国生物物种名录，动植物真菌微生物数据库，自然爱好者/学生查询。 |
 | **w3newspapers** | https://www.w3newspapers.com | 世界各国在线报纸导航，练外语/看境外原版新闻视角。 |
 

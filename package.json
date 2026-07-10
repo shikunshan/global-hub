@@ -1,0 +1,30 @@
+{
+  "name": "global-hub",
+  "version": "1.0.0",
+  "description": "Global Hub - a clean, ad-free, bilingual web directory curating 100+ high-quality websites. Built for information equality.",
+  "type": "module",
+  "private": true,
+  "homepage": "https://github.com/shikunshan/global-hub",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shikunshan/global-hub.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/tailwind.css -o ./css/tailwind.build.css --minify",
+    "watch:css": "tailwindcss -i ./css/tailwind.css -o ./css/tailwind.build.css --watch",
+    "build": "npm run build:css",
+    "fetch-icons": "node scripts/fetch-icons.mjs",
+    "optimize-icons": "node scripts/optimize-icons.mjs",
+    "serve": "npx --yes serve ."
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1",
+    "sharp": "^0.33.5",
+    "sharp-ico": "^0.1.5",
+    "tailwindcss": "^3.4.17"
+  }
+}

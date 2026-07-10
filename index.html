@@ -2,8 +2,25 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="public/icon.png" />
+    <link rel="icon" type="image/png" href="public/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Apply saved theme before paint to prevent a flash of the wrong theme -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("gh-theme");
+          var theme =
+            saved ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+          if (theme === "dark")
+            document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
     <title data-i18n="heroTitle">
       Global Hub - Connect to the World's Best Information
     </title>
@@ -22,46 +39,7 @@
       rel="stylesheet"
     />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: ["class", '[data-theme="dark"]'],
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Geist", "system-ui", "-apple-system", "sans-serif"],
-              mono: ["Geist Mono", "ui-monospace", "monospace"],
-            },
-            colors: {
-              brand: {
-                50: "#eff6ff",
-                100: "#dbeafe",
-                200: "#bfdbfe",
-                300: "#93c5fd",
-                400: "#60a5fa",
-                500: "#3b82f6",
-                600: "#2563eb",
-                700: "#1d4ed8",
-                800: "#1e40af",
-                900: "#1e3a8a",
-              },
-            },
-            animation: {
-              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-              "fade-in-up": "fadeInUp 0.6s ease-out forwards",
-            },
-            keyframes: {
-              fadeInUp: {
-                "0%": { opacity: "0", transform: "translateY(12px)" },
-                "100%": { opacity: "1", transform: "translateY(0)" },
-              },
-            },
-          },
-        },
-      };
-    </script>
-
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/tailwind.build.css" />
   </head>
   <body
     class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased min-h-screen transition-colors duration-300"
@@ -336,7 +314,7 @@
                 >Built for information equality.</span
               >
               <a
-                href="https://github.com"
+                href="https://github.com/shikunshan/global-hub"
                 target="_blank"
                 rel="noopener"
                 class="text-brand-600 dark:text-brand-400 hover:underline ml-1"

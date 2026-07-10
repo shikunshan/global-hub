@@ -6,9 +6,60 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import sharp from 'sharp';
+import ico from 'sharp-ico';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
+
+const ICON_SIZE = 64; // px, square — favicons render at ~28-44px on the page
+
+// 检测图片真实格式（很多站点把 ico/svg 直接返回，需按魔术字节判断）
+function detectFormat(buf) {
+  const hex = buf.subarray(0, 4).toString('hex');
+  if (hex.startsWith('89504e47')) return 'png';
+  if (hex.startsWith('47494638')) return 'gif';
+  if (hex.startsWith('ffd8ff')) return 'jpeg';
+  if (hex.startsWith('52494646')) return 'webp';
+  if (hex.startsWith('00000100') || hex.startsWith('00000200')) return 'ico';
+  const head = buf.subarray(0, 256).toString('utf8').trimStart().toLowerCase();
+  if (head.startsWith('<?xml') || head.startsWith('<svg')) return 'svg';
+  if (head.startsWith('<!') || head.startsWith('<html') || head.startsWith('<head')) return 'html';
+  return 'unknown';
+}
+
+// 把任意 favicon 缓冲区转换为统一的小尺寸 PNG
+async function toOptimizedPng(buf) {
+  const fmt = detectFormat(buf);
+  if (fmt === 'html' || fmt === 'unknown') {
+    throw new Error(`unsupported/broken content (${fmt})`);
+  }
+  let img;
+  if (fmt === 'ico') {
+    const frames = ico.sharpsFromIco(buf, undefined, true);
+    let best = null;
+    let bestArea = -1;
+    for (const entry of frames) {
+      const candidate = entry.image || entry;
+      const meta = await candidate.metadata();
+      const area = (meta.width || 0) * (meta.height || 0);
+      if (area > bestArea) { bestArea = area; best = candidate; }
+    }
+    if (!best) throw new Error('empty ICO');
+    img = best;
+  } else if (fmt === 'svg') {
+    img = sharp(buf, { density: 256 });
+  } else {
+    img = sharp(buf, { animated: false });
+  }
+  return img
+    .resize(ICON_SIZE, ICON_SIZE, {
+      fit: 'contain',
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    })
+    .png({ compressionLevel: 9, palette: true, quality: 80, effort: 8 })
+    .toBuffer();
+}
 
 const sitesData = JSON.parse(
   fs.readFileSync(path.join(root, 'data/sites.json'), 'utf-8')
@@ -39,14 +90,16 @@ function fetchWithTimeout(url) {
   }).finally(() => clearTimeout(timer));
 }
 
-// 下载图片到本地文件
+// 下载图片、优化为小尺寸 PNG 后写入本地文件
 async function download(url, dest) {
   const res = await fetchWithTimeout(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const buf = Buffer.from(await res.arrayBuffer());
   // 过滤掉空文件或 HTML 错误页（favicon 至少几百字节）
   if (buf.length < 100) throw new Error('File too small, likely error page');
-  fs.writeFileSync(dest, buf);
+  // 转换 + 压缩为统一 64x64 PNG（同时会拒绝 HTML 错误页）
+  const optimized = await toOptimizedPng(buf);
+  fs.writeFileSync(dest, optimized);
 }
 
 // 从网站 HTML 中解析 <link rel="icon"> 的 href
@@ -74,14 +127,25 @@ async function parseIconFromHtml(siteUrl) {
 
 // 主流程：遍历所有网站下载 favicon
 async function main() {
-  console.log(`开始下载 ${sitesData.sites.length} 个网站的 favicon...\n`);
+  const force = process.argv.includes('--force');
+  console.log(
+    `开始处理 ${sitesData.sites.length} 个网站的 favicon${force ? '（强制重新下载全部）' : '（仅补齐缺失的）'}...\n`
+  );
   let success = 0;
   let failed = 0;
+  let skipped = 0;
   const failedList = [];
 
   for (const site of sitesData.sites) {
     const hostname = getHostname(site.url);
     const iconPath = path.join(iconsDir, `${site.id}.png`);
+
+    // 默认只补齐缺失的图标；已存在则跳过（用 --force 可全部重下）
+    if (!force && fs.existsSync(iconPath)) {
+      skipped++;
+      continue;
+    }
+
     let done = false;
 
     // 策略1：直接请求 /favicon.ico
@@ -125,7 +189,7 @@ async function main() {
     await new Promise((r) => setTimeout(r, 200));
   }
 
-  console.log(`\n完成：成功 ${success}，失败 ${failed}`);
+  console.log(`\n完成：成功 ${success}，跳过 ${skipped}，失败 ${failed}`);
   if (failedList.length > 0) {
     console.log(`失败列表：${failedList.join(', ')}`);
     console.log('失败的网站将在线上前端自动 fallback 到在线 API 加载。');

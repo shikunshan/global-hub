@@ -1,5 +1,36 @@
 // Global Hub - Main Application Logic
 
+// --- HTML / URL escaping helpers (defense-in-depth for data-driven markup) ---
+
+// 转义用于 HTML 文本节点的内容
+function escapeHtml(value) {
+  return String(value == null ? '' : value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// 转义用于 HTML 属性值的内容（与文本转义相同，额外覆盖引号）
+function escapeAttr(value) {
+  return escapeHtml(value);
+}
+
+// 仅允许 http/https 链接，阻断 javascript:、data: 等危险协议
+function sanitizeUrl(url) {
+  const raw = String(url == null ? '' : url).trim();
+  try {
+    const parsed = new URL(raw, window.location.href);
+    if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+      return parsed.href;
+    }
+  } catch {
+    /* 无法解析则视为不安全 */
+  }
+  return '#';
+}
+
 const state = {
   sites: [],
   categories: [],
@@ -37,6 +68,7 @@ const BANG_COMMANDS = {
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', async () => {
   initTheme();
+  setupLogoFallback();
   await loadData();
   initLanguage();
   renderCategories();
@@ -55,8 +87,16 @@ async function loadData() {
     ]);
     const sitesData = await sitesRes.json();
     const i18nData = await i18nRes.json();
+    // 应用默认值，允许 sites.json 省略公共字段（缩小体积）
+    const defaults = sitesData.defaults || {};
+    const defaultDate = defaults.lastUpdated || '2024-07-01';
     state.categories = sitesData.categories;
-    state.sites = sitesData.sites;
+    state.sites = sitesData.sites.map((site) => ({
+      subcategory: null,
+      isNew: false,
+      lastUpdated: defaultDate,
+      ...site,
+    }));
     state.i18n = i18nData;
   } catch (err) {
     console.error('Failed to load data:', err);
@@ -155,9 +195,9 @@ function renderCategories() {
         ${state.activeCategory === item.id
           ? 'text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-500/10 active'
           : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'}"
-      data-category="${item.id}"
+      data-category="${escapeAttr(item.id)}"
     >
-      ${item.label}
+      ${escapeHtml(item.label)}
     </button>
   `).join('');
 
@@ -174,10 +214,29 @@ function renderCategories() {
 }
 
 function scrollToContent() {
-  const target = document.getElementById('featuredSection');
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // 找到当前实际可见的第一个内容区块（精选区在切到普通分类时会隐藏）
+  const featured = document.getElementById('featuredSection');
+  const container = document.getElementById('categoriesContainer');
+  let target = null;
+  if (featured && !featured.classList.contains('hidden')) {
+    target = featured;
+  } else if (container && container.firstElementChild) {
+    target = container.firstElementChild; // 第一个分类 section
   }
+  if (!target) return;
+
+  // 顶部有 sticky header + sticky 分类导航，需要减去它们的高度，
+  // 否则第一行卡片会被遮住。留一点额外呼吸空间。
+  const header = document.querySelector('header');
+  const nav = document.getElementById('categoryNav');
+  const offset =
+    (header ? header.offsetHeight : 64) +
+    (nav ? nav.offsetHeight : 56) +
+    16;
+
+  const top =
+    target.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
 }
 
 // --- Featured Section (AI Frontier) ---
@@ -203,7 +262,7 @@ function renderFeaturedSection() {
     return `
       <div class="featured-subcategory bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm rounded-2xl border border-slate-200/80 dark:border-slate-800/80 p-5 shadow-sm hover:shadow-md transition-shadow" style="animation-delay: ${idx * 0.05}s">
         <h3 class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">
-          ${subcat.name[state.currentLang]}
+          ${escapeHtml(subcat.name[state.currentLang])}
         </h3>
         <div class="space-y-2">
           ${subcatSites.map((site, sIdx) => createFeaturedCard(site, idx * 10 + sIdx)).join('')}
@@ -216,33 +275,32 @@ function renderFeaturedSection() {
 function createFeaturedCard(site, index = 0) {
   const t = state.i18n[state.currentLang];
   const newBadge = site.isNew
-    ? `<span class="new-badge inline-flex items-center px-2 py-0.5 text-xs font-semibold text-white bg-brand-500 rounded-full ml-2">${t.newLabel}</span>`
+    ? `<span class="new-badge inline-flex items-center px-2 py-0.5 text-xs font-semibold text-white bg-brand-500 rounded-full ml-2">${escapeHtml(t.newLabel)}</span>`
     : '';
 
   return `
     <a
-      href="${site.url}"
+      href="${escapeAttr(sanitizeUrl(site.url))}"
       target="_blank"
       rel="noopener"
-      class="site-card card-stagger block group p-3 -mx-1 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors"
+      class="featured-card card-stagger relative flex items-start gap-3 group p-3 -mx-1 rounded-xl hover:bg-white dark:hover:bg-slate-800/70 transition-colors"
       style="animation-delay: ${index * 0.04}s"
     >
-      <div class="flex items-start gap-3">
-        <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-xl group-hover:scale-110 transition-transform overflow-hidden">
-          ${renderLogo(site, 'w-6 h-6')}
-        </div>
-        <div class="flex-1 min-w-0">
-          <div class="flex items-center gap-1">
-            <h4 class="font-semibold text-slate-900 dark:text-white text-sm truncate">
-              ${site.name}
-            </h4>
-            ${newBadge}
-          </div>
-          <p class="mt-1 text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
-            ${site.desc[state.currentLang]}
-          </p>
-        </div>
+      <div class="card-logo flex-shrink-0 w-10 h-10 flex items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden ring-1 ring-inset ring-slate-200/60 dark:ring-slate-700/60 group-hover:ring-brand-400/50">
+        ${renderLogo(site, 'w-6 h-6')}
       </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-1">
+          <h4 class="font-semibold text-slate-900 dark:text-white text-sm truncate group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+            ${escapeHtml(site.name)}
+          </h4>
+          ${newBadge}
+        </div>
+        <p class="mt-1 text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
+          ${escapeHtml(site.desc[state.currentLang])}
+        </p>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="featured-card-arrow self-center flex-shrink-0 text-brand-500 dark:text-brand-400" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
     </a>
   `;
 }
@@ -300,7 +358,7 @@ function renderRegularCategories() {
 function createRegularCard(site, index = 0) {
   const t = state.i18n[state.currentLang];
   const newBadge = site.isNew
-    ? `<span class="new-badge inline-flex items-center px-1.5 py-0.5 text-[10px] font-bold text-white bg-brand-500 rounded-full">${t.newLabel}</span>`
+    ? `<span class="new-badge inline-flex items-center px-1.5 py-0.5 text-[10px] font-bold text-white bg-brand-500 rounded-full">${escapeHtml(t.newLabel)}</span>`
     : '';
 
   const hostname = (() => {
@@ -308,38 +366,42 @@ function createRegularCard(site, index = 0) {
     catch { return site.url; }
   })();
 
+  const visitLabel = escapeHtml(t.visit || 'Visit');
+
   return `
     <a
-      href="${site.url}"
+      href="${escapeAttr(sanitizeUrl(site.url))}"
       target="_blank"
       rel="noopener"
-      class="site-card card-stagger group bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm rounded-xl border border-slate-200/80 dark:border-slate-800/80 p-4 shadow-sm hover:shadow-lg hover:border-brand-300/60 dark:hover:border-brand-500/30"
+      class="site-card card-stagger group relative flex flex-col bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm rounded-2xl border border-slate-200/70 dark:border-slate-800/70 p-4 shadow-sm hover:border-transparent overflow-hidden"
       style="animation-delay: ${index * 0.03}s"
     >
-      <div class="flex items-start gap-3">
-        <div class="flex-shrink-0 w-11 h-11 flex items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-xl group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+      <span class="card-glow" aria-hidden="true"></span>
+      <span class="card-sheen" aria-hidden="true"></span>
+      <div class="relative flex items-start gap-3">
+        <div class="card-logo flex-shrink-0 w-11 h-11 flex items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden ring-1 ring-inset ring-slate-200/60 dark:ring-slate-700/60 group-hover:ring-brand-400/50">
           ${renderLogo(site, 'w-7 h-7')}
         </div>
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2">
-            <h4 class="font-semibold text-slate-900 dark:text-white text-sm truncate">
-              ${site.name}
+            <h4 class="font-semibold text-slate-900 dark:text-white text-sm truncate group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+              ${escapeHtml(site.name)}
             </h4>
             ${newBadge}
           </div>
           <p class="text-[11px] text-slate-400 dark:text-slate-500 font-mono mt-0.5 truncate">
-            ${hostname}
+            ${escapeHtml(hostname)}
           </p>
         </div>
       </div>
-      <p class="mt-3 text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
-        ${site.desc[state.currentLang]}
+      <p class="relative mt-3 text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
+        ${escapeHtml(site.desc[state.currentLang])}
       </p>
-      <div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-        <span class="text-[10px] text-slate-400 dark:text-slate-500 font-mono">
-          ${t.lastUpdated} ${formatDate(site.lastUpdated)}
+      <div class="relative mt-auto pt-3 flex items-center">
+        <span class="card-cta inline-flex items-center gap-1 text-xs font-semibold text-brand-600 dark:text-brand-400">
+          ${visitLabel}
+          <svg xmlns="http://www.w3.org/2000/svg" class="card-cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="text-slate-300 dark:text-slate-600 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
       </div>
     </a>
   `;
@@ -461,13 +523,37 @@ function getDuckDuckGoLogoUrl(site) {
 }
 
 // 生成 logo 的 HTML（三级 fallback：本地缓存 → Google API → DuckDuckGo API）
-// 优先使用已下载到项目本地的 favicon 文件，避免每次请求外部 API，提升加载速度
+// 优先使用已下载到项目本地的 favicon 文件，避免每次请求外部 API，提升加载速度。
+// fallback 链通过 data-* 属性 + 事件委托实现（不用内联 onerror，兼容 CSP，避免 XSS）。
 function renderLogo(site, sizeClass = 'w-6 h-6') {
-  const local = `assets/icons/${site.id}.png`;
+  const local = `assets/icons/${encodeURIComponent(site.id)}.png`;
   const google = getGoogleLogoUrl(site);
   const ddg = getDuckDuckGoLogoUrl(site);
-  // 链式 onerror：本地文件加载失败 → Google API → DuckDuckGo API
-  return `<img src="${local}" alt="${site.name}" loading="lazy" class="${sizeClass} rounded object-contain" onerror="this.onerror=null;this.src='${google}';this.onerror=function(){this.onerror=null;this.src='${ddg}'}" />`;
+  const fallbacks = [google, ddg].join('|');
+  return `<img src="${escapeAttr(local)}" alt="${escapeAttr(site.name)}" loading="lazy" decoding="async" class="${escapeAttr(sizeClass)} rounded object-contain" data-logo-fallback="${escapeAttr(fallbacks)}" />`;
+}
+
+// 事件委托：图片加载失败时依次尝试 data-logo-fallback 中的备用地址
+function setupLogoFallback() {
+  document.addEventListener(
+    'error',
+    (e) => {
+      const img = e.target;
+      if (!(img instanceof HTMLImageElement)) return;
+      const chain = img.getAttribute('data-logo-fallback');
+      if (!chain) return;
+      const remaining = chain.split('|').filter(Boolean);
+      if (remaining.length === 0) {
+        img.removeAttribute('data-logo-fallback');
+        img.style.visibility = 'hidden'; // 全部失败则隐藏，避免破图
+        return;
+      }
+      const next = remaining.shift();
+      img.setAttribute('data-logo-fallback', remaining.join('|'));
+      img.src = next;
+    },
+    true // 捕获阶段：img 的 error 事件不冒泡
+  );
 }
 
 // --- Utilities ---
